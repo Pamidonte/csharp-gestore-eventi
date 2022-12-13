@@ -53,6 +53,31 @@ while (ControlloPostiDaDisdire == "si")
     Console.WriteLine("il totale dei posti disponibili è: " + PostiAncoraDisponibili);
     Console.WriteLine("desideri ripetere l'operazione? rispondi con si o no");
     ControlloPostiDaDisdire = Console.ReadLine().ToLower();
-
-
 }
+
+ProgrammaEventi programmaDegliEventi = new ProgrammaEventi("festa");
+Evento eventoFiera2 = new Evento("festaMattina", "24/1/2025", 150, 60);
+Evento eventoFiera3 = new Evento("festaPomeriggio", "24/1/2025", 150, 60);
+Evento eventoFiera4 = new Evento("festaSera", "23/1/2025", 150, 60);
+
+programmaDegliEventi.aggiungiEvento(eventoFiera2);
+programmaDegliEventi.aggiungiEvento(eventoFiera3);
+programmaDegliEventi.aggiungiEvento(eventoFiera4);
+
+Console.WriteLine("il numero degli eventi presenti è: " + programmaDegliEventi.numeroEventiPresenti());
+
+Console.WriteLine("inserisci una data");
+string dataInserita = Console.ReadLine();
+List<Evento> eventiInQuellaData= programmaDegliEventi.getEventiData(dataInserita);
+foreach (Evento item in eventiInQuellaData) 
+{ 
+    Console.WriteLine(item.ToString());
+}
+ProgrammaEventi.stampaListaEvento (eventiInQuellaData);
+programmaDegliEventi.cancellaEventi();
+
+
+
+
+
+
