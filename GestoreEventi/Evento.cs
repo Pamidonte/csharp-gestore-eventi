@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GestoreEventi
 {
-    internal class Evento
+    public class Evento
     {
        private string titolo;
        public DateTime data;
@@ -80,7 +80,7 @@ namespace GestoreEventi
             }
             this.numeroPostiPrenotati = PostiSomma;
         } 
-        public int RimuoviPostiPrenotati(int PostiDaRimuovere)
+        public void RimuoviPostiPrenotati(int PostiDaRimuovere)
         {
             if (this.data < DateTime.Now)
             {
@@ -90,8 +90,8 @@ namespace GestoreEventi
             {
                 throw new Exception(" non ci sono cosi tanti posti da rimuovere");
             }
-            int PostiFinali = numeroPostiPrenotati - PostiDaRimuovere;
-            return PostiFinali;
+
+            this.numeroPostiPrenotati = numeroPostiPrenotati - PostiDaRimuovere;          
         }
         public override string ToString()
         {

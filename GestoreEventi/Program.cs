@@ -32,7 +32,7 @@ if (ControlloPrenotazioni == "si")
 
 int PostiAncoraDisponibili = eventoFiera.GetCapienzaMassima() - eventoFiera.GetNumeroPostiPrenotati();
 
-Console.WriteLine("il totale dei posti prenotati è: " + eventoFiera.GetNumeroPostiPrenotati);
+Console.WriteLine("il totale dei posti prenotati è: " + eventoFiera.GetNumeroPostiPrenotati());
 Console.WriteLine("il totale dei posti disponibili è: " + PostiAncoraDisponibili);
 
 Console.WriteLine("vuoi disdire dei posti? rispondi con si o no");
@@ -48,7 +48,7 @@ while (ControlloPostiDaDisdire == "si")
     Console.WriteLine("quanti posti vuoi disdire?");
     int PostiDaRimuovere = int.Parse(Console.ReadLine());
     eventoFiera.RimuoviPostiPrenotati(PostiDaRimuovere);
-    Console.WriteLine("il totale dei posti prenotati è: " + eventoFiera.GetNumeroPostiPrenotati);
+    Console.WriteLine("il totale dei posti prenotati è: " + eventoFiera.GetNumeroPostiPrenotati());
     PostiAncoraDisponibili = eventoFiera.GetCapienzaMassima() - eventoFiera.GetNumeroPostiPrenotati();
     Console.WriteLine("il totale dei posti disponibili è: " + PostiAncoraDisponibili);
     Console.WriteLine("desideri ripetere l'operazione? rispondi con si o no");
