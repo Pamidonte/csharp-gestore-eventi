@@ -61,7 +61,9 @@ namespace GestoreEventi
             this.capienzaMassima = capienzaMassima;
             this.numeroPostiPrenotati = numeroPostiPrenotati;
         }
-        public int PrenotaPosti(int PostiDaAggiungere)
+
+        // metodi 
+        public void PrenotaPosti(int PostiDaAggiungere)
         {
             if ( this.data < DateTime.Now)
             {
@@ -76,7 +78,7 @@ namespace GestoreEventi
             {
                 throw new Exception("non ci sono piu posti prenotabili");
             }
-            return PostiSomma;
+            this.numeroPostiPrenotati = PostiSomma;
         } 
         public int RimuoviPostiPrenotati(int PostiDaRimuovere)
         {
@@ -84,7 +86,7 @@ namespace GestoreEventi
             {
                 throw new Exception("l evento è gia passato");
             }
-            if (PostiDaRimuovere - numeroPostiPrenotati < 0)
+            if (numeroPostiPrenotati - PostiDaRimuovere < 0)
             {
                 throw new Exception(" non ci sono cosi tanti posti da rimuovere");
             }
